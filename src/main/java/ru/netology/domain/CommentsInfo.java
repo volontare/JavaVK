@@ -1,12 +1,49 @@
 package ru.netology.domain;
 
 public class CommentsInfo {
-    private int commentAuthorId; //id автора комментария
-    private String commentAuthorUrl; //ссылка на страницу автора комментария
-    private String commentAuthorImageUrl; //аватар автора комментария
-    private int commentId; //id комментария
-    private int commentCount; //счетчик комментариев
-    private boolean canComment; //можно комментировать или нет
-    private int commentLikesCount; //счетчик лайков к комментарию
-    private int commentDate; //дата и время комментария
+    private int count; // число комментариев
+    private int[] canPost;  // информация о том, может ли текущий пользователь комментировать запись (1 — может, 0 — не может)
+    private int[] groupsCanPost; // информация о том, могут ли сообщества комментировать запись
+    private boolean canClose; // может ли текущий пользователь закрыть комментарии к записи
+    private boolean canOpen; // может ли текущий пользователь открыть комментарии к записи
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int[] getCanPost() {
+        return canPost;
+    }
+
+    public void setCanPost(int[] canPost) {
+        this.canPost = canPost;
+    }
+
+    public int[] getGroupsCanPost() {
+        return groupsCanPost;
+    }
+
+    public void setGroupsCanPost(int[] groupsCanPost) {
+        this.groupsCanPost = groupsCanPost;
+    }
+
+    public boolean isCanClose() {
+        return canClose;
+    }
+
+    public void setCanClose(boolean canClose) {
+        this.canClose = canClose;
+    }
+
+    public boolean isCanOpen() {
+        return canOpen;
+    }
+
+    public void setCanOpen(boolean canOpen) {
+        this.canOpen = canOpen;
+    }
 }
